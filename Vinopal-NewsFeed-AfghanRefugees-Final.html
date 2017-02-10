@@ -91,30 +91,38 @@
 		<script>
 			/* Description of my data here */
 			/* Number of Afghan refugees living in Pakistan, in millions, at the end of 2015 */
-			var AfghansinPakistan = 1.5;  
+			var Afghans_In_Pakistan = 1.5;  
 			
 			/* Description of this overall assignment, which focuses on the population of Afghan refugees worldwide. */
-			var AfghanRefugeesWorldwide = "Afghan Refugees Global Population";
+			var Afghan_Refugees_Worldwide = "Afghan Refugees Global Population";
 			
 			/* Afghanistan is the second largest source of refugees worldwide. This is true -- today, Afghanistan is the second largest source of refugees after Syria. */
-			var AfghanistanIsTheLargestSourceofRefugeesWorldwide = false; 
+			var Afghanistan_Is_The_Largest_Source_Of_Refugees_Worldwide = false; 
 			
 			/* Top five countries hosting Afghan refugees. This list names the countries that host the highest numbers of Afghan refugees, with Pakistan being the host of the most Afghan refugees and the United States being the host of the smallest number of Afghan refugees. */
-			var HostingCountriesOfAfghanRefugees = ["Pakistan", "Iran", "Germany", "United Arab Emirates", "United States"];
+			var Hosting_Countries_Of_Afghan_Refugees = ["Pakistan", "Iran", "Germany", "United Arab Emirates", "United States"];
 			
 			/* Characteristics of Afghan refugees. Here I specify the initial cause of displacement, the number of internally displaced persons in the country, top two host countries, and characteristics specific to the Afghan refugee population in Iran. */
-			var CharacteristicsOfAfghanRefugees = {
-				"InitialCauseofDisplacement":"SovietAfghanWar",
-				"NumberOfIDPs": 980000,
-				"TopHostCountries": 
+			var Characteristics_Of_Afghan_Refugees = {
+				"Initial_Cause_Of_Displacement":"Soviet Afghan War",
+				"Number_Of_IDPs": 980000,
+				"Top_Host_Countries": 
 					["Pakistan", "Iran"],
-				"AfghanRefugeesInIran": 
-					{"LivingSituation":"UrbanAreas", "MajorEthnicGroup":"Hazaras", "LiteracyRate":"SixtyPercent"}
+				"Afghan_Refugees_In_Iran": 
+					{"Living_Situation":"Urban Areas", "Major_Ethnic_Group":"Hazaras", "Literacy_Rate":"Sixty Percent"}
 				};
 			
+			console.log("Afghan Refugees");
 			
+			console.log(Hosting_Countries_Of_Afghan_Refugees);
+			 
+			Hosting_Countries_Of_Afghan_Refugees[4] = "United Kingdom"; 
 			
+			console.log(Hosting_Countries_Of_Afghan_Refugees);
 			
+			Characteristics_Of_Afghan_Refugees.Number_Of_IDPs = "1000000000";
+			
+			console.log(Characteristics_Of_Afghan_Refugees);
 			 
 			
 			
