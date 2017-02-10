@@ -96,18 +96,20 @@
 			/* Description of this overall assignment, which focuses on the population of Afghan refugees worldwide. */
 			var AfghanRefugeesWorldwide = "Afghan Refugees Global Population";
 			
-			/*Afghanistan is the second largest source of refugees worldwide*/
-			var boolean_LargestSourceofRefugeesWorldwide = false; 
+			/* Afghanistan is the second largest source of refugees worldwide. This is true -- today, Afghanistan is the second largest source of refugees after Syria. */
+			var AfghanistanIsTheLargestSourceofRefugeesWorldwide = false; 
 			
-			/*Top three countries hosting Afghan refugees*/
-			var list_HostingCountries = ["Pakistan", "Iran", "Germany"];
+			/* Top five countries hosting Afghan refugees. This list names the countries that host the highest numbers of Afghan refugees, with Pakistan being the host of the most Afghan refugees and the United States being the host of the smallest number of Afghan refugees. */
+			var HostingCountriesOfAfghanRefugees = ["Pakistan", "Iran", "Germany", "United Arab Emirates", "United States"];
 			
-			/*Characteristics of Afghanistan*/
-			var object_Afghanistan = {
-				"name":"Afghanistan",
-				"continent":"Asia",
-				"official_languages":
-					["Dari", "Pashto"]
+			/* Characteristics of Afghan refugees. Here I specify the initial cause of displacement, the number of internally displaced persons in the country, top two host countries, and characteristics specific to the Afghan refugee population in Iran. */
+			var CharacteristicsOfAfghanRefugees = {
+				"InitialCauseofDisplacement":"SovietAfghanWar",
+				"NumberOfIDPs": 980000,
+				"TopHostCountries": 
+					["Pakistan", "Iran"],
+				"AfghanRefugeesInIran": 
+					{"LivingSituation":"UrbanAreas", "MajorEthnicGroup":"Hazaras", "LiteracyRate":"SixtyPercent"}
 				};
 			
 			
