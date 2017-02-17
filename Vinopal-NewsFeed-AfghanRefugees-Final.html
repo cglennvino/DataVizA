@@ -112,7 +112,7 @@
 					{"Living_Situation":"Urban Areas", "Major_Ethnic_Group":"Hazaras", "Literacy_Rate":"Sixty Percent"}
 				};
 			
-			/*Below is a list of objects, with each object being an article on my current research project focusing on refugee work training and placement*/
+			/*Below is a list of objects, with each object being an article on my current research project focusing on refugee work training and placement. I gave each object five properties, referring to the headline, source, link, author, and summary*/
 			var Articles_RefugeeWorkResources = [{
 				"headline":"While Others Saw Refugees, This German Professor Saw Human Potential",
 				"newssource":"NPR",
@@ -143,15 +143,15 @@
 				}
 			];
 			
-			/*Goal: Go through each item in the list and have console notify me every time there is an article published by NPR*/
+			/*Objective: Go through each item in the list and have console print object every time there is an article published by NPR*/
 			
 			for(var counter = 0;counter < Articles_RefugeeWorkResources.length; counter++){
 				
-				/*Test if an article has "NPR" as "newssource"
-				 * If it does, print the object.
-				 * If not, print "Not NPR"
-				 */
-				
+			/*Test if an article has "NPR" as "newssource"
+			* If it does, print the object.
+			* If it does not, print "Not NPR."
+			* Articles_RefugeeWorkResources[counter] has also been replaced with "RefugeeArticle"
+			*/
 				var RefugeeArticle = Articles_RefugeeWorkResources[counter]; 
 
 				if(RefugeeArticle.newssource == "NPR"){
@@ -159,11 +159,7 @@
 					}else{
 						console.log("Not NPR");
 					}
-				
-			
-			
 			}
-			
 			console.log("End of loop");
 			
 			
