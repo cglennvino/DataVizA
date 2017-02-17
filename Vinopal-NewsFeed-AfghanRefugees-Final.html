@@ -143,11 +143,28 @@
 				}
 			];
 			
-			/*Goal: Go through each item in the list and print a mesage to the console every time I find one that was published on NPR*/
-			for(var counter=0;counter< Articles_RefugeeWorkResources.length; counter++){
+			/*Goal: Go through each item in the list and have console notify me every time there is an article published by NPR*/
+			
+			for(var counter = 0;counter < Articles_RefugeeWorkResources.length; counter++){
 				
+				/*Test if an article has "NPR" as "newssource"
+				 * If it does, print the object.
+				 * If not, print "Not NPR"
+				 */
 				
+				var RefugeeArticle = Articles_RefugeeWorkResources[counter]; 
+
+				if(RefugeeArticle.newssource == "NPR"){
+					console.log(RefugeeArticle);
+					}else{
+						console.log("Not NPR");
+					}
+				
+			
+			
 			}
+			
+			console.log("End of loop");
 			
 			
 			
