@@ -12,29 +12,29 @@
 	<!-- This script example was found on https://developers.google.com/chart/interactive/docs/quick_start	
 	<!-- JavaScript code loaded from the Google Visualizations Library-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
-    
     <script type="text/javascript">
-      // Load the Visualization API and the corechart package.
+    
+    
+      /*Call on charts recipe from google library, and carry out "load"*/
       google.charts.load('current', {'packages':['corechart']});
       
-      /*When Google calls back with the contents of the "corechart" package, 
-       * execute the "drawChart" function
+      /*Google will refer to code from the corechart package
+       * When this happens, perform the "makeChart" function
        */
       google.charts.setOnLoadCallback(makeChart);
 
-      /*This is the drawChart function.
-       * It doesn't need any extra ingredients
-       * It draws a chart on the page
+      /*This is the makeChart function.
+       * The makeChart function will draw a chart on the page
+       * without any other "ingredients," i.e. variables or instructions.
        */
       function makeChart() {
 
-        // Create the data table.
+        // From the data available, create a chart.
         var chartData = new google.visualization.DataTable();
         /*Add a column of type string, labeled "Topping"*/
-        chartData.addColumn('string', 'Topping');
+        chartData.addColumn('string', 'Reason');
         /*Add a column of type number, labeled "Slices"*/
-        chartData.addColumn('number', 'Slices');
+        chartData.addColumn('number', 'Frequency');
         /*My rows must be a list of lists, with the same number and type
          *having the same number of elements as I have columns
          * AND with the data types matching those that were declared
