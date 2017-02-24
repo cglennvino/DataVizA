@@ -15,7 +15,7 @@
     <script type="text/javascript">
     
     
-      /*Call on charts recipe from google library, and carry out "load"*/
+      /*Call on charts recipe from Google library, and carry out "load"*/
       google.charts.load('current', {'packages':['corechart']});
       
       /*Google will refer to contents from the corechart package
@@ -25,7 +25,7 @@
 
       /*This is the makeChart function.
        * The makeChart function will use code from the google library to make a chart on the page
-       * without any other "ingredients," i.e. variables or instructions.
+       * without any other "ingredients," i.e. objects or arrays.
        */
       function makeChart() {
 
@@ -33,15 +33,14 @@
        
         var chartData = new google.visualization.DataTable();
         /*Using data table's functions, we are able to add columns and rows
-        
         *Add a column of type string, labeled "HostCountry"*/
         chartData.addColumn('string', 'HostCountry');
         /*Add a column of type number, labeled "Refugees"*/
         chartData.addColumn('number', 'Refugees');
-        /*My rows must be a list of lists, with the same number and type
-         *having the same number of elements as I have columns
-         * AND with the data types matching those that were declared
-         * in my "addColumn" function calls.
+        /*Each row is an array of arrays, with 5 strings and 5 numbers
+         *and the same number of elements as there are columns.
+         * The data types match what was declared in the "addColumn" function,
+         * i.e. top host countries and the number of Afghan refugees in those countries.
          * */
         chartData.addRows([
           ['Pakistan', 1615876],
@@ -52,8 +51,8 @@
         ]);
 
         /*The object includes some customization;
-         * We will need to add to this extensively to 
-         * make visualizations we might actually want to publish
+         * I will need to add to this to make the visualization my own,
+         * and something that I might actually want to publish.
           */
         var chartDesign = {
         	'title':'Countries Hosting Afghan Refugees',
