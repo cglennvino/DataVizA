@@ -21,26 +21,26 @@
       /*When Google calls back with the contents of the "corechart" package, 
        * execute the "drawChart" function
        */
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(makeChart);
 
       /*This is the drawChart function.
        * It doesn't need any extra ingredients
        * It draws a chart on the page
        */
-      function drawChart() {
+      function makeChart() {
 
         // Create the data table.
-        var data_container = new google.visualization.DataTable();
+        var chartData = new google.visualization.DataTable();
         /*Add a column of type string, labeled "Topping"*/
-        data_container.addColumn('string', 'Topping');
+        chartData.addColumn('string', 'Topping');
         /*Add a column of type number, labeled "Slices"*/
-        data_container.addColumn('number', 'Slices');
+        chartData.addColumn('number', 'Slices');
         /*My rows must be a list of lists, with the same number and type
          *having the same number of elements as I have columns
          * AND with the data types matching those that were declared
          * in my "addColumn" function calls.
          * */
-        data_container.addRows([
+        chartData.addRows([
           ['Hunger', 3],
           ['Job Applications', 1],
           ['Naptime', 1],
@@ -52,7 +52,7 @@
          * We will need to add to this extensively to 
          * make visualizations we might actually want to publish
           */
-        var customization_options = {
+        var chartDesign = {
         	'title':'Reasons I Procrastinated This Week',
             'width':400,
             'height':300
@@ -64,12 +64,12 @@
          */
         
         
-        var chart = new google.visualization.PieChart(document.getElementById("chart_holder"));
+        var pieChart = new google.visualization.PieChart(document.getElementById("chart_holder"));
         
         
         
         
-        chart.draw(data_container, customization_options);
+        pieChart.draw(data_container, customization_options);
       }
     </script>
 	
