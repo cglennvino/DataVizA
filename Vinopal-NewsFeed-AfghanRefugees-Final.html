@@ -18,62 +18,62 @@
       /*Call on charts recipe from google library, and carry out "load"*/
       google.charts.load('current', {'packages':['corechart']});
       
-      /*Google will refer to code from the corechart package
+      /*Google will refer to contents from the corechart package
        * When this happens, perform the "makeChart" function
-       */
+       * This will use code from google to make the chart.      */
       google.charts.setOnLoadCallback(makeChart);
 
       /*This is the makeChart function.
-       * The makeChart function will draw a chart on the page
+       * The makeChart function will use code from the google library to make a chart on the page
        * without any other "ingredients," i.e. variables or instructions.
        */
       function makeChart() {
 
-        // From the data available, create a chart.
+        /* Using the data available in the google library, create a chart.*/
+       
         var chartData = new google.visualization.DataTable();
-        /*Add a column of type string, labeled "Topping"*/
-        chartData.addColumn('string', 'Reason');
-        /*Add a column of type number, labeled "Slices"*/
-        chartData.addColumn('number', 'Frequency');
+        /*Using data table's functions, we are able to add columns and rows
+        
+        *Add a column of type string, labeled "HostCountry"*/
+        chartData.addColumn('string', 'HostCountry');
+        /*Add a column of type number, labeled "Refugees"*/
+        chartData.addColumn('number', 'Refugees');
         /*My rows must be a list of lists, with the same number and type
          *having the same number of elements as I have columns
          * AND with the data types matching those that were declared
          * in my "addColumn" function calls.
          * */
         chartData.addRows([
-          ['Hunger', 3],
-          ['Job Applications', 1],
-          ['Naptime', 1],
-          ['Spring Fever', 2],
-          ['New Television', 1]
+          ['Pakistan', 1615876],
+          ['Iran', 814015],
+          ['Germany', 24203],
+          ['Austria', 11906],
+          ['Sweden', 10499]
         ]);
 
-        /*Options object includes some customization;
+        /*The object includes some customization;
          * We will need to add to this extensively to 
          * make visualizations we might actually want to publish
           */
         var chartDesign = {
-        	'title':'Reasons I Procrastinated This Week',
-            'width':400,
-            'height':300
+        	'title':'Countries Hosting Afghan Refugees',
+            'width':800,
+            'height':700
             };
 
-        /*Creating a variable, in which I am storing the result 
-         * of calling the "PieChart" function.
-         * I must pass that function the ID of a div that exists on the HTML page
+        /*Here I created a variable to hold the pie chart.
+         * I must use a <div> ID that exists on the HTML page
+         * in order for it to function
+         */
+        var pieChart = new google.visualization.BarChart(document.getElementById("chart_container"));
+        /*Draw chart by using the "chartData" object 
+         * and the "chartDesign" object
          */
         
-        
-        var pieChart = new google.visualization.PieChart(document.getElementById("chart_holder"));
-        
-        
-        
-        
         pieChart.draw(chartData, chartDesign);
+        /*End makeChart function*/
       }
     </script>
-	
-	
 	
 	
 	</head>
@@ -82,7 +82,7 @@
 
 <!--This is the div where I want my Google Viz chart to appear.
 -->
-	<div id="chart_holder"></div>
+	<div id="chart_container"></div>
 
 		<!--Initial article block begins here-->
 
