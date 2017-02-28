@@ -3,101 +3,160 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		
+
 		<link rel="stylesheet" href="styles.css" />
-		
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 		<title>Updated Research on Afghan Refugee Population</title>
-	
-		
-	<!-- This script example was found on https://developers.google.com/chart/interactive/docs/quick_start	
-	<!-- JavaScript code loaded from the Google Visualizations Library-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-    
-    
-      /*Call on charts recipe from Google library, and carry out "load"*/
-      google.charts.load('current', {'packages':['corechart']});
-      
-      /*Google will refer to contents from the corechart package
-       * When this happens, perform the "makeChart" function
-       * This will use code from google to make the chart.      */
-      google.charts.setOnLoadCallback(makeChart);
 
-      /*This is the makeChart function.
-       * The makeChart function will use code from the google library to make a chart on the page
-       * without any other "ingredients," i.e. objects or arrays.
-       */
-      function makeChart() {
+		<!-- This script example was found on https://developers.google.com/chart/interactive/docs/quick_start
+		<!-- JavaScript code loaded from the Google Visualizations Library-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			/*Call on charts recipe from Google library, and carry out "load"*/
+			google.charts.load('current', {
+				'packages' : ['corechart']
+			});
 
-        /* Using the data available in the google library, create a chart.*/
-       
-        var chartData = new google.visualization.DataTable();
-        /*Using data table's functions, we are able to add columns and rows
-        *Add a column of type string, labeled "HostCountry"*/
-        chartData.addColumn('string', 'HostCountry');
-        /*Add a column of type number, labeled "Refugees"*/
-        chartData.addColumn('number', 'Refugees');
-        /*Each row is an array of arrays, with 5 strings and 5 numbers
-         *and the same number of elements as there are columns.
-         * The data types match what was declared in the "addColumn" function,
-         * i.e. top host countries and the number of Afghan refugees in those countries.
-         * */
-        chartData.addRows([
-          ['Pakistan', 1615876],
-          ['Iran', 814015],
-          ['Germany', 24203],
-          ['Austria', 11906],
-          ['Sweden', 10499]
-        ]);
+			/*Google will refer to contents from the corechart package
+			 * When this happens, perform the "makeChart" function
+			 * This will use code from google to make the chart.      */
+			google.charts.setOnLoadCallback(makeAllCharts);
 
-        /*The object includes some customization;
-         * I will need to add to this to make the visualization my own,
-         * and something that I might actually want to publish.
-          */
-        var chartDesign = {
-        	'title':'Countries Hosting Afghan Refugees',
-            'width':800,
-            'height':700
-            };
+			function makeAllCharts() {
 
-        /*Here I created a variable to hold the pie chart.
-         * I must use a <div> ID that exists on the HTML page
-         * in order for it to function
-         */
-        var pieChart = new google.visualization.BarChart(document.getElementById("chart_container"));
-        /*Draw chart by using the "chartData" object 
-         * and the "chartDesign" object
-         */
-        
-        pieChart.draw(chartData, chartDesign);
-        /*End makeChart function*/
-      }
-    </script>
-	
-	
+				makeChart();
+				makeChart2();
+
+			}
+
+			/*This is the makeChart function.
+			 * The makeChart function will use code from the google library to make a chart on the page
+			 * without any other "ingredients," i.e. objects or arrays.
+			 */
+			function makeChart() {
+
+				/* Using the data available in the google library, create a chart.*/
+
+				var chartData = new google.visualization.DataTable();
+				/*Using data table's functions, we are able to add columns and rows
+				 *Add a column of type string, labeled "HostCountry"*/
+				chartData.addColumn('string', 'HostCountry');
+				/*Add a column of type number, labeled "Refugees"*/
+				chartData.addColumn('number', 'Refugees');
+				/*Each row is an array of arrays, with 5 strings and 5 numbers
+				 *and the same number of elements as there are columns.
+				 * The data types match what was declared in the "addColumn" function,
+				 * i.e. top host countries and the number of Afghan refugees in those countries.
+				 * */
+				chartData.addRows([['Pakistan', 1615876], ['Iran', 814015], ['Germany', 24203], ['Austria', 11906], ['Sweden', 10499]]);
+
+				/*The object includes some customization;
+				 * I will need to add to this to make the visualization my own,
+				 * and something that I might actually want to publish.
+				 */
+				var chartDesign = {
+					'title' : 'Countries Hosting Afghan Refugees',
+					'width' : 800,
+					'height' : 700
+				};
+
+				/*Here I created a variable to hold the pie chart.
+				 * I must use a <div> ID that exists on the HTML page
+				 * in order for it to function
+				 */
+				var pieChart = new google.visualization.BarChart(document.getElementById("chart_container"));
+				/*Draw chart by using the "chartData" object
+				 * and the "chartDesign" object
+				 */
+
+				pieChart.draw(chartData, chartDesign);
+				/*End makeChart function*/
+			}
+
+			function makeChart2() {
+
+				/* Using the data available in the google library, create a chart.*/
+
+				var chartData = new google.visualization.DataTable();
+				/*Using data table's functions, we are able to add columns and rows
+				 *Add a column of type string, labeled "HostCountry"*/
+				chartData.addColumn('string', 'HostCountry');
+				/*Add a column of type number, labeled "Refugees"*/
+				chartData.addColumn('number', 'Refugees');
+				/*Each row is an array of arrays, with 5 strings and 5 numbers
+				 *and the same number of elements as there are columns.
+				 * The data types match what was declared in the "addColumn" function,
+				 * i.e. top host countries and the number of Afghan refugees in those countries.
+				 * */
+				chartData.addRows([['Pakistan', 1615876], ['Iran', 814015], ['Germany', 24203], ['Austria', 11906], ['Sweden', 10499]]);
+
+				/*The object includes some customization;
+				 * I will need to add to this to make the visualization my own,
+				 * and something that I might actually want to publish.
+				 */
+				var chartDesign = {
+					'title' : 'Countries Hosting Afghan Refugees',
+					'width' : 800,
+					'height' : 700
+				};
+
+				/*Here I created a variable to hold the pie chart.
+				 * I must use a <div> ID that exists on the HTML page
+				 * in order for it to function
+				 *REMEMBER TO CHANGE DIV ID TO MATCH THE ONE ON THE PAGE*/
+				var pieChart = new google.visualization.BarChart(document.getElementById("chart_container2"));
+				/*Draw chart by using the "chartData" object
+				 * and the "chartDesign" object
+				 */
+
+				pieChart.draw(chartData, chartDesign);
+				/*End makeChart function*/
+			}
+
+		</script>
+
 	</head>
 	<body>
+		<div class="container-fluid">
+
 		<h1>Recent Stories on Afghan Refugees with Visuals</h1>
 
-<!--This is the div where I want my Google Viz chart to appear.
--->
-	<div id="chart_container"></div>
+		<!--This is the div where I want my Google Viz chart to appear.
+		-->
+
+		<div class="row">
+
+		<div class="col-md-6">
+
+		<div id="chart_container"></div>
+
+		</div>
+
+		<div class="col-md-6">
+
+		<div id="chart_container2"></div>
+
+		</div>
+		</div>
 
 		<!--Initial article block begins here-->
 
 		<div class="VinopalArticleContainer">
-			<div class="VinopalArticleTitles">
-				<!--The link below was found at the following page:-->
-				<a href="http://www.economist.com/blogs/graphicdetail/2016/09/daily-chart-11">Pakistan is driving out 1.5m Afghan refugees</a>
-			</div>
-			<!--The visual below came from the same article, and was found at the following page:-->
-			<div class="VinopalImg">
-				<img src="http://cdn.static-economist.com/sites/default/files/imagecache/original-size/20160924_WOC615_0.png" />
-			</div>
-			<!--The text below summarizes main points of the article-->
-			<div>
-				In September 2016, the data team at <i>The Economist</i> reported that the 1.5 million Afghan refugees living in Pakistan would have a harder time staying in the country due to pushback from the government. <i>The Economist</i> reported that the Pakistani government was taking a number of measures to send Afghans back to their home country, including requiring visas for the refugees to stay after November, and discontinuing the validity of “proof of registration” cards. The visual above compares the numbers of registered Afghan refugees in Pakistan against those who have returned from Pakistan since 1979. It predicts an increase in both registered and undocumented Afghans returning from Pakistan at the end of 2016.
-			</div>
+		<div class="VinopalArticleTitles">
+		<!--The link below was found at the following page:-->
+		<a href="http://www.economist.com/blogs/graphicdetail/2016/09/daily-chart-11">Pakistan is driving out 1.5m Afghan refugees</a>
+		</div>
+		<!--The visual below came from the same article, and was found at the following page:-->
+		<div class="VinopalImg">
+		<img src="http://cdn.static-economist.com/sites/default/files/imagecache/original-size/20160924_WOC615_0.png" />
+		</div>
+		<!--The text below summarizes main points of the article-->
+		<div>
+		In September 2016, the data team at <i>The Economist</i> reported that the 1.5 million Afghan refugees living in Pakistan would have a harder time staying in the country due to pushback from the government. <i>The Economist</i> reported that the Pakistani government was taking a number of measures to send Afghans back to their home country, including requiring visas for the refugees to stay after November, and discontinuing the validity of “proof of registration” cards. The visual above compares the numbers of registered Afghan refugees in Pakistan against those who have returned from Pakistan since 1979. It predicts an increase in both registered and undocumented Afghans returning from Pakistan at the end of 2016.
+		</div>
 		</div>
 
 		<!--End first article block-->
@@ -160,7 +219,7 @@
 		<!--End fourth article block-->
 
 		<script type="text/javascript" src="scripts.js"></script>
-		
+		</div>
 	</body>
 </html>
 
