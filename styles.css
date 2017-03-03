@@ -1,29 +1,44 @@
 /* Here I created classes to define the font style, size, and family of article titles, as well as the color (under Vinopal Articles). VinopalImg defines width of photos and creates a black solid border. The third class I created is VinopalArticleContainer, which sets the block containing all four articles at 600px. */
-
+/*The body defines font family.*/
 body {
 	font-family: Geneva;
 }
+/*This class defines font and color elements of
+ * the titles in my articles.
+ */
 .VinopalArticleTitles {
 	font-style: bold font-size :28px;
 	font-family: Arial;
 	color: #800000;
 }
+/*This class defines the size and border color
+ * of the images that accompany my articles
+ */
 .VinopalImg {
 	width: 400px;
 	border: solid 1px #000000;
 }
+/*This sets image at 100% of its original size
+ */
 img {
 	max-width: 100%
 }
+/*This class sets articles within a 600px area.
+ */
 .VinopalArticleContainer {
 	width: 600px;
 }
+/*This applies size and color settings so that the page 
+ * doesn't "jump" when the first visualization is loading.
+ */
 	#chart_container{
 		width: 800px;
 		height: 700px;
 		background-color: #C0C0C0;
 	}
-	
+/*This applies size and color settings so that the page
+ * doesn't "jump" when the second visualization is loading.
+ */	
 	#chart_container2{
 		width: 800px;
 		height: 700px;
